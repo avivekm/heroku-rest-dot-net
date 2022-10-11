@@ -1,0 +1,4 @@
+{"Timestamp":"2022-01-05T13:58:54.4962374+05:30","Level":"Information","MessageTemplate":"Application Starting"}
+{"Timestamp":"2022-01-05T15:48:22.2266162+05:30","Level":"Information","MessageTemplate":"Application Starting"}
+{"Timestamp":"2022-01-05T16:04:26.8022089+05:30","Level":"Information","MessageTemplate":"Application Starting"}
+{"Timestamp":"2022-01-05T16:15:40.6744724+05:30","Level":"Information","MessageTemplate":"Application Starting"}
