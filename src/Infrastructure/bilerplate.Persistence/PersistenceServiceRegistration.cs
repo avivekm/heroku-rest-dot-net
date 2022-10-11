@@ -14,15 +14,6 @@ namespace bilerplate.Persistence
 
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("ApplicationConnectionString")));
-            var serviceProvider = services.BuildServiceProvider();
-            try
-            {
-                var dbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
-                dbContext.Database.Migrate();
-            }
-            catch
-            {
-            }
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IEventRepository, EventRepository>();
