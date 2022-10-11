@@ -16,6 +16,7 @@ using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using bilerplate.Api.SwaggerHelper;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -90,6 +91,15 @@ else
 }
 
 services.AddPersistenceServices(Configuration);
+var serviceProvider = builder.Services.BuildServiceProvider();
+try
+{
+    var dbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
+    dbContext.Database.Migrate();
+}
+catch
+{
+}
 services.AddIdentityServices(Configuration);
 services.AddScoped<ILoggedInUserService, LoggedInUserService>();
 services.AddSwaggerExtension();
