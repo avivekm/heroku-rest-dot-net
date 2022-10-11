@@ -76,7 +76,7 @@ services.AddSwaggerGen(options => options.OperationFilter<SwaggerDefaultValues>(
 services.AddControllers();
 services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(@"bin\debug\configuration"));
-services.AddHealthcheckExtensionService(Configuration);
+//services.AddHealthcheckExtensionService(Configuration);
 
 builder.Services.AddSwaggerGen();
 
